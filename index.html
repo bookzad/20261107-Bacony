@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ศรีราชา 7–8 พ.ย. 2569</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#173A33">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ศรีราชา">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Anuphan:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECF1EA;      /* pale celadon */
+  --surface:#F7FAF5;
+  --ink:#16221E;
+  --muted:#56665F;
+  --forest:#173A33;     /* stream shade */
+  --jade:#4E9483;       /* river water */
+  --saffron:#D99A1E;    /* robe */
+  --saffron-ink:#7A5208;
+  --line:#C9D6CC;
+  --credit:#71817A;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0F1C19; --surface:#16261F; --ink:#E5ECE6; --muted:#9DB0A6;
+    --forest:#0A1512; --jade:#7FC0AE; --saffron:#EDB445; --saffron-ink:#F3CB78;
+    --line:#2A3D36; --credit:#83968D; color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Anuphan",system-ui,-apple-system,"Noto Sans Thai",sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:4px}
+img{max-width:100%;display:block}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--forest);color:#EAF2EC;padding:56px 0 36px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;
+  background:repeating-linear-gradient(90deg,var(--saffron) 0 28px,transparent 28px 40px)}
+.hero h1{font-family:"Chonburi","Anuphan",serif;font-weight:400;font-size:clamp(2.6rem,11vw,4.2rem);
+  line-height:1.05;margin:0 0 6px;letter-spacing:.01em}
+.hero .when{font-size:1.05rem;color:#BFD6CB;margin:0 0 28px}
+.hero .money{display:flex;gap:28px;flex-wrap:wrap;margin:0 0 30px}
+.hero .money div{font-size:.9rem;color:#A9C4B8}
+.hero .money strong{display:block;font-size:1.5rem;font-weight:600;color:#fff;line-height:1.2}
+
+/* signature: route track */
+.track{overflow-x:auto;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track ol{list-style:none;margin:0;padding:0;display:flex;min-width:720px;position:relative}
+.track ol::before{content:"";position:absolute;left:8px;right:8px;top:7px;height:2px;background:#4E7A6E}
+.track li{flex:1;position:relative;padding-top:24px;font-size:.82rem;line-height:1.35;color:#D6E5DD}
+.track li::before{content:"";position:absolute;top:0;left:0;width:16px;height:16px;border-radius:50%;
+  background:var(--forest);border:2px solid #8FB8A9}
+.track li.stay::before{background:var(--saffron);border-color:var(--saffron)}
+.track li span{display:block;color:#8FB0A4;font-size:.75rem;margin-top:2px}
+.track li:last-child{flex:0 0 64px}
+
+/* ---------- sections ---------- */
+section{padding:40px 0 8px}
+h2{font-family:"Chonburi","Anuphan",serif;font-weight:400;font-size:1.75rem;line-height:1.2;margin:0}
+.dayhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+.dayhead .num{font-family:"Chonburi",serif;font-size:3rem;line-height:1;color:var(--jade)}
+.dayhead .date{color:var(--muted);font-size:.95rem}
+.theme{margin:0 0 18px;color:var(--muted)}
+.routebtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;
+  background:var(--jade);color:#fff;padding:10px 18px;border-radius:999px;font-size:.95rem;margin-bottom:28px}
+@media (prefers-color-scheme:dark){.routebtn{color:#0F1C19}}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:58px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.stop{display:grid;grid-template-columns:48px 1fr;column-gap:26px;position:relative;padding-bottom:26px}
+.stop::after{content:"";position:absolute;left:53px;top:9px;width:12px;height:12px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--jade)}
+.stop.stay::after{background:var(--saffron);border-color:var(--saffron)}
+.time{font-weight:600;font-size:.95rem;text-align:right;padding-top:1px;font-variant-numeric:tabular-nums}
+.time.none{color:var(--muted);font-weight:400}
+.leg{font-size:.82rem;color:var(--muted);margin:0 0 2px}
+.place{font-size:1.15rem;font-weight:600;line-height:1.35;margin:0}
+.place a{text-decoration:none;border-bottom:1.5px solid var(--jade)}
+.place a:hover{color:var(--jade)}
+.note{margin:4px 0 0;font-size:.95rem;color:var(--muted)}
+.cost{display:inline-block;margin-top:8px;font-size:.88rem;font-weight:600;
+  padding:2px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.cost.minus{color:var(--jade);border-color:var(--jade)}
+figure{margin:12px 0 0}
+figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:var(--line)}
+figcaption{font-size:.72rem;color:var(--credit);margin-top:4px}
+
+/* lunch options */
+.opts{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px}
+.opt{display:grid;grid-template-columns:96px 1fr;gap:12px;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;padding:10px;align-items:start}
+.opt img{width:96px;height:96px;object-fit:cover;border-radius:7px;background:var(--line)}
+.opt h4{margin:0;font-size:1rem;line-height:1.35}
+.opt h4 a{text-decoration:none;border-bottom:1.5px solid var(--jade)}
+.opt p{margin:2px 0 0;font-size:.85rem;color:var(--muted);line-height:1.5}
+.opt .credit{font-size:.68rem;color:var(--credit)}
+.pick{font-size:.82rem;color:var(--saffron-ink);font-weight:600;margin:6px 0 0}
+
+/* stay card */
+.stay-card{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--saffron);
+  border-radius:4px 12px 12px 4px;padding:20px;margin-top:16px}
+.stay-card h3{margin:0;font-size:1.2rem}
+.stay-card .sub{color:var(--muted);margin:2px 0 14px;font-size:.95rem}
+.stay-card figure{margin:0 0 16px}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:.95rem}
+dl.facts dt{color:var(--muted)}
+dl.facts dd{margin:0;font-weight:500}
+details{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:600;color:var(--saffron-ink)}
+details ul{padding-left:20px;margin:10px 0 0;font-size:.93rem}
+details li{margin-bottom:4px}
+
+/* budget ledger */
+table.ledger{width:100%;border-collapse:collapse;font-size:.97rem;margin-top:16px}
+.ledger td{padding:9px 0;border-bottom:1px dashed var(--line);vertical-align:top}
+.ledger td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;padding-left:16px}
+.ledger tr.minus td:last-child{color:var(--jade)}
+.ledger tr.total td{border-bottom:none;border-top:2px solid var(--ink);font-weight:600;font-size:1.1rem;padding-top:12px}
+.aside{font-size:.9rem;color:var(--muted);margin-top:10px}
+
+footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero .when,.hero .money,.track{animation:rise .7s ease-out both}
+  .hero .when{animation-delay:.08s}.hero .money{animation-delay:.16s}.track{animation-delay:.24s}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>ศรีราชา<br>สองวันหนึ่งคืน</h1>
+    <p class="when">เสาร์ 7 – อาทิตย์ 8 พฤศจิกายน 2569</p>
+    <div class="money">
+      <div><strong>฿10,050</strong>งบรวมทั้งทริป</div>
+      <div><strong>~260 กม.</strong>ขับรวมไป-กลับ</div>
+    </div>
+    <nav class="track" aria-label="เส้นทางทั้งทริป">
+      <ol>
+        <li>บ้าน<span>7:00</span></li>
+        <li>The Hidden Falls<span>~115 กม.</span></li>
+        <li>Siri Park &amp; Zoo<span>~15 กม.</span></li>
+        <li>มื้อเที่ยง<span>เลือก 1 ใน 3 ร้าน</span></li>
+        <li class="stay">Balcony Courtyard<span>~5–9 กม. · ค้าง 1 คืน</span></li>
+        <li>ครัวบ้านป้าบุญ 3<span>6 กม.</span></li>
+        <li>บ้าน<span>112 กม.</span></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- DAY 1 -->
+  <section class="day" id="day1">
+    <div class="dayhead"><span class="num">1</span><div><h2>ลำธาร สวนสัตว์ แล้วเข้าที่พัก</h2><div class="date">วันเสาร์ 7 พ.ย.</div></div></div>
+    <p class="theme">ออกเช้าไปนั่งคาเฟ่ริมลำธารตอนคนยังน้อย ต่อด้วยให้อาหารสัตว์ กินข้าวเที่ยง แล้วเช็กอินบ่าย</p>
+    <a class="routebtn" target="_blank" rel="noopener"
+       href="https://www.google.com/maps/dir/?api=1&destination=Balcony%20Courtyard%20Sriracha&waypoints=The%20Hidden%20Falls%20Si%20Racha%7CSiri%20Park%20and%20Zoo%20by%20Sriracha%20Zoo&travelmode=driving">🧭 เปิดเส้นทางวันนี้ใน Google Maps</a>
+
+    <ol class="tl">
+      <li class="stop">
+        <div class="time">7:00</div>
+        <div><p class="place">ออกจากบ้าน</p></div>
+      </li>
+
+      <li class="stop">
+        <div class="time">8:45</div>
+        <div>
+          <p class="leg">🚗 ~1 ชม. 40 นาที · ~115 กม.</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=1629792015118418347">The Hidden Falls ในสวนลับ</a></p>
+          <p class="note">คาเฟ่ริมลำธาร มีโต๊ะในน้ำ เปิด 8:30–18:00 · ไปถึงช่วงเปิดใหม่ ๆ ได้โต๊ะในน้ำง่าย · สั่งและจ่ายก่อนแล้วค่อยหาโต๊ะ</p>
+          <span class="cost">฿800</span>
+          <figure>
+            <img loading="lazy" alt="The Hidden Falls ในสวนลับ" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdHRvMoZMjwxOaKRGBrKQvlDA-bG8jfZZ-ISJzvObFvfNhxVsH_q2zig7pohhYgf_6OIqvjkbaQckbMRJjafPsSmZvoEEsWofPs-0CLmnBFF1-aOaO4lA3j1LAYsMGphOZm403X=s4800-w800-h600">
+            <figcaption>ภาพ: ในสวนลับ via Google Maps</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="stop">
+        <div class="time">10:00</div>
+        <div>
+          <p class="leg">🚗 ~20 นาที · ~15 กม.</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=5813161277437850856">ศิริพาร์ค แอนด์ ซู บาย ศรีราชา ซู</a></p>
+          <p class="note">เปิด 9:00–17:00 (เข้าได้ถึง 16:00) · ผู้ใหญ่ ฿100 ได้คูปอง ฿100 คืนไว้ใช้ซื้ออาหารสัตว์ ถ่ายรูป หรือซื้อของกิน · เด็กสูงไม่ถึง 140 ซม. เข้าฟรี · ที่ร่มน้อย เตรียมหมวกและน้ำ</p>
+          <span class="cost">฿500 (ผู้ใหญ่ 5)</span>
+          <figure>
+            <img loading="lazy" alt="ศิริพาร์ค แอนด์ ซู" src="https://lh3.googleusercontent.com/grass-cs/AABkmLeUxhoqTSArX2G1pDhLR9WvQsAAPbgJNGDK7TdD1h7VgNN2L0iDnE24WzXPdb6zPogegOfNQdnx2q0TmWlsrzUk1EoMYWHCx1uzJsGqKlK45WanIChO9FvCfQ3nBE01LJoOyOAvww=s4800-w800-h600">
+            <figcaption>ภาพ: ศิริพาร์ค แอนด์ ซู via Google Maps</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="stop">
+        <div class="time">12:30</div>
+        <div>
+          <p class="place">มื้อเที่ยง · เลือก 1 ร้าน</p>
+          <p class="note">ทั้ง 3 ร้านอยู่ระหว่างสวนสัตว์กับโรงแรม</p>
+          <ul class="opts">
+            <li class="opt">
+              <img loading="lazy" alt="เจ๊เซี้ยมข้าวมันไก่" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdHLGJsGETuyfjPVhT2uqUM0mvdIJRDwpKgIQer5MMRR5dn1Whj8nIMId6Syi1SSvMoi37v0ZBKsp8LFECBQmEJAPv21CsvUz_EhPuhTWywxTQB3Bre22lP3yRL7vWDF-9XijVuaDzigH3E=s4800-w800-h600">
+              <div>
+                <h4><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/SKmV9G81v1GrVHKX9">เจ๊เซี้ยมข้าวมันไก่</a></h4>
+                <p>🚗 ~3 นาที · ~1 กม. จากสวนสัตว์ · ไปโรงแรมต่อ ~9 กม.</p>
+                <p>เปิด 7:30–14:00 · ร้านดังของศรีราชา มีน้ำส้มและขนมหวาน</p>
+                <p class="credit">ภาพ: やってみた via Google Maps</p>
+              </div>
+            </li>
+            <li class="opt">
+              <img loading="lazy" alt="บ้านพริกขี้หนู" src="https://lh3.googleusercontent.com/grass-cs/AABkmLeoPYIdwPSmSx1GUVyJ13dG4u-lNy-VS_jF2q50bB3Ic3kpDnUz6qAQxJ_aSnoJ3KJIxd768251XI4L-E71KJr3g3JvTO9xRyl9DbYQ_zzcTG0GLnoG2rJI1Mgs1RYgMfKMI16Y=s4800-w800-h600">
+              <div>
+                <h4><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/wGY6uJGQaUG6hmLw7">บ้านพริกขี้หนู</a></h4>
+                <p>🚗 ~8 นาที · ~4 กม. จากสวนสัตว์ · ไปโรงแรมต่อ ~6 กม.</p>
+                <p>เปิด 11:00–22:00 · อาหารไทย ห้องแอร์ ที่จอดกว้าง เหมาะกับกลุ่มใหญ่ มีเมนูเด็ก</p>
+                <p class="credit">ภาพ: Pari Swan (One) via Google Maps</p>
+              </div>
+            </li>
+            <li class="opt">
+              <img loading="lazy" alt="ส.ธัญรส เกาเหลาเนื้อ-หมูตุ๋น" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcdDgKL2vsF0bq8Lb85gLsV_wdfofO3gYSDuYoFKv7i6zlWPxu4b9T8zLIFHMldPcx46vBC62n9NX3ORWlVG5hYF_0y8JwWauT_YfQNDhz-lYAEW6e87uwpL9AdFWhE_tZfRpLNfA=s4800-w800-h600">
+              <div>
+                <h4><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/pNm3Bvp2xEnpxxwGA">ส.ธัญรส เกาเหลาเนื้อ-หมูตุ๋น</a></h4>
+                <p>🚗 ~10 นาที · ~6 กม. จากสวนสัตว์ · ไปโรงแรมต่อ ~5 กม.</p>
+                <p>เปิด 7:00–15:00 (ปิดวันพุธ) · ก๋วยเตี๋ยวเนื้อตุ๋น คนแน่นช่วงเที่ยง ไม่มีแอร์</p>
+                <p class="credit">ภาพ: ส.ธัญรส via Google Maps</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="stop stay">
+        <div class="time">14:00</div>
+        <div>
+          <p class="leg">🚗 ~10–15 นาที · ~5–9 กม. (ขึ้นกับร้านที่เลือก)</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=13549312549956065138">เช็กอิน Balcony Courtyard ศรีราชา</a></p>
+          <p class="note">ห้อง Luxury 1 Bedroom · มีสวนน้ำ เครื่องเล่น และโซนเด็กในโรงแรม (รายละเอียดห้องอยู่ด้านล่าง)</p>
+        </div>
+      </li>
+
+      <li class="stop">
+        <div class="time none">เย็น</div>
+        <div>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=13549312549956065138">มื้อเย็น ร้านอาหารกองข้าว</a></p>
+          <p class="note">ในโรงแรม ใช้ Restaurant Voucher ฿500 ที่แถมมากับแพ็กเกจ</p>
+          <span class="cost">฿2,500</span> <span class="cost minus">−฿500 voucher</span>
+        </div>
+      </li>
+    </ol>
+
+    <div class="stay-card">
+      <h3>Balcony Courtyard Sriracha</h3>
+      <p class="sub">Luxury 1 Bedroom · 1 คืน (เสาร์ 7 → อาทิตย์ 8 พ.ย.)</p>
+      <figure>
+        <img loading="lazy" alt="Balcony Courtyard Sriracha" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcwuAL9ab0j2pTpKLi8N4IW8nqVddpeELruJFfR-4AUt33LZ-kVGcpgBsUjqyOv3xPBUikj5PaGIj6gCCGZqGXsHlB57jhheT3JA1dQZZ2jsJ2KUWi5fWe2ACJT2PmcxNj6oJpTTw=s4800-w800-h600">
+        <figcaption>ภาพ: บัลโคนี คอร์ทยาร์ด ศรีราชา via Google Maps</figcaption>
+      </figure>
+      <dl class="facts">
+        <dt>ค่าห้อง</dt><dd>฿4,250 (E-Voucher 1 code จากแพ็กเกจ 2 คืน ฿8,500)</dd>
+        <dt>เสาร์</dt><dd>+฿500 / ห้อง / คืน (ข้อ 3.1)</dd>
+        <dt>รวมผู้เข้าพัก</dt><dd>ผู้ใหญ่ 2 + เด็ก 1 (อายุ 7 ปี)</dd>
+        <dt>เสริมคน</dt><dd>ผู้ใหญ่ ฿900 · เด็ก 8–14 ปี ฿450</dd>
+        <dt>โทร</dt><dd><a href="tel:+6638323999">038 323 999</a></dd>
+      </dl>
+      <details>
+        <summary>วิธีจองด้วย E-Voucher</summary>
+        <ul>
+          <li>ส่งอีเมลจองล่วงหน้าไปที่ <a href="mailto:reservation@balconythailand.com?subject=Check-in%207%20Nov%202026">reservation@balconythailand.com</a> เท่านั้น</li>
+          <li>หัวเรื่อง: วันที่ต้องการ Check in</li>
+          <li>ใส่ชื่อ-นามสกุลผู้เข้าพัก 1 ท่าน (ภาษาอังกฤษ), สาขา บัลโคนีคอร์ดยาร์ท, วันที่เข้าพัก, จำนวนผู้ใหญ่/เด็ก และอายุเด็ก, เบอร์โทร</li>
+          <li>แนบรูป QR / Redeem code (1 code = 1 ห้อง 1 คืน)</li>
+          <li>แสดง QR Code อีกครั้งตอนลงทะเบียนเข้าพัก</li>
+          <li>Invoice WGMFWLSYX · Voucher หมดอายุ 28 ก.พ. 2570</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- DAY 2 -->
+  <section class="day" id="day2">
+    <div class="dayhead"><span class="num">2</span><div><h2>มื้อเที่ยงแล้วกลับบ้าน</h2><div class="date">วันอาทิตย์ 8 พ.ย.</div></div></div>
+    <p class="theme">เช็กเอาต์สบาย ๆ แวะกินข้าวร้านใหญ่ใกล้โรงแรม แล้วขับกลับ</p>
+    <a class="routebtn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/ZW4WGKvdV3J2rrSKA">🧭 เปิดเส้นทางวันนี้ใน Google Maps</a>
+
+    <ol class="tl">
+      <li class="stop stay">
+        <div class="time none">เช้า</div>
+        <div><p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=13549312549956065138">เช็กเอาต์ Balcony Courtyard</a></p></div>
+      </li>
+
+      <li class="stop">
+        <div class="time none">เที่ยง</div>
+        <div>
+          <p class="leg">🚗 10 นาที · 5.6 กม.</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=14037250786343779215">ครัวบ้านป้าบุญ 3</a></p>
+          <p class="note">ร้านใหญ่ มีสนามเด็กเล่นและมุมสัตว์ วันอาทิตย์เปิด 10:00</p>
+          <span class="cost">฿2,000</span>
+          <figure>
+            <img loading="lazy" alt="ครัวบ้านป้าบุญ 3" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcRAF9HwJhtkQvGadudtcW-qtxsKJeyWomlxmywqd4mpZb4MKcZkqsTy122Q5oU6ahxqeN4BLtl4XJXvv7X6FU-jY_q9fi-3YhH0r29hWi4CVgNM_5x_v0xY6Ipo5tpIzHwHR_r=s4800-w800-h600">
+            <figcaption>ภาพ: ครัวบ้านป้าบุญ 3 via Google Maps</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="stop">
+        <div class="time none">บ่าย</div>
+        <div>
+          <p class="leg">🚗 1 ชม. 40 นาที · 112 กม.</p>
+          <p class="place">ถึงบ้าน</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- BUDGET -->
+  <section id="budget">
+    <h2>งบประมาณ</h2>
+    <table class="ledger">
+      <tr><td>ที่พัก Balcony Courtyard 1 คืน</td><td>4,250</td></tr>
+      <tr><td>ค่าเพิ่มวันเสาร์</td><td>500</td></tr>
+      <tr><td>The Hidden Falls</td><td>800</td></tr>
+      <tr><td>ศิริพาร์ค แอนด์ ซู (ผู้ใหญ่ 5 × 100)</td><td>500</td></tr>
+      <tr><td>มื้อเย็น ร้านอาหารกองข้าว</td><td>2,500</td></tr>
+      <tr class="minus"><td>Restaurant Voucher</td><td>−500</td></tr>
+      <tr><td>มื้อเที่ยง ครัวบ้านป้าบุญ 3</td><td>2,000</td></tr>
+      <tr class="total"><td>รวม (บาท)</td><td>10,050</td></tr>
+    </table>
+    <p class="aside">ยังไม่รวมมื้อเที่ยงวันแรก ค่าน้ำมัน/ทางด่วน ค่ากิจกรรมในสวนสัตว์ที่เกินคูปอง และค่าเสริมผู้เข้าพัก (ถ้ามี) · ระยะทางวันแรกเป็นค่าประมาณ ให้ยึดตาม Google Maps</p>
+  </section>
+
+  <footer>
+    ข้อมูลจากชีตแผนทริปและรายละเอียด E-Voucher Luxury 1 Bedroom_77 · ค่าเข้าสวนสัตว์จากข้อมูลออนไลน์ ณ ต.ค. 2569 · ภาพสถานที่จาก Google Maps
+  </footer>
+</main>
+</body>
+</html>
