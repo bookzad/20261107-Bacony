@@ -160,6 +160,12 @@ dialog.lb.multi .lb-nav{display:block}
 .stop.pass .place{font-size:1rem;font-weight:500}
 .stop.charge::after{background:var(--jade)}
 
+.stop.optional::after{border-style:dashed;background:transparent}
+.track li.optional::before{border-style:dashed;background:transparent}
+.ledger tr.optional td{color:var(--muted);font-style:italic}
+.timecalc{margin:8px 0 0;font-size:.88rem;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--saffron);border-radius:0 8px 8px 0;padding:8px 12px}
+.timecalc b{color:var(--saffron-ink)}
+
 /* stay card */
 .stay-card{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--saffron);
   border-radius:4px 12px 12px 4px;padding:20px;margin-top:16px}
@@ -197,17 +203,17 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
     <h1>ศรีราชา<br>สองวันหนึ่งคืน</h1>
     <p class="when">เสาร์ 7 – อาทิตย์ 8 พฤศจิกายน 2569</p>
     <div class="money">
-      <div><strong>฿16,150</strong>งบรวมทั้งทริป</div>
+      <div><strong>฿15,350</strong>งบรวมทั้งทริป<small>+฿800 ถ้าแวะคาเฟ่ในสวนลับ</small></div>
       <div><strong>~270 กม.</strong>ขับรวมไป-กลับ</div>
     </div>
     <nav class="track" aria-label="เส้นทางทั้งทริป">
       <ol>
-        <li>บ้าน<span>6:00</span></li>
+        <li>บ้าน<span>7:00</span></li>
         <li>วัดตาลล้อม<span>~100 กม.</span></li>
         <li>ชาร์จ PEA VOLTA<span>~1 กม. · 30 นาที</span></li>
         <li>ชมวิวอ่างบางพระ<span>ผ่านทาง</span></li>
-        <li>The Hidden Falls<span>~20 กม.</span></li>
-        <li>Siri Park &amp; Zoo<span>~15 กม.</span></li>
+        <li class="optional">The Hidden Falls<span>ไม่บังคับ</span></li>
+        <li>Siri Park &amp; Zoo<span>~13 กม.</span></li>
         <li>มื้อเที่ยง<span>เลือก 1 ใน 4 ร้าน</span></li>
         <li class="stay">Balcony Courtyard<span>~5–10 กม. · ค้าง 1 คืน</span></li>
         <li>ครัวบ้านป้าบุญ 3<span>6 กม.</span></li>
@@ -223,17 +229,17 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
   <!-- DAY 1 -->
   <section class="day" id="day1">
     <div class="dayhead"><span class="num">1</span><div><h2>วัด ลำธาร สวนสัตว์ แล้วเข้าที่พัก</h2><div class="date">วันเสาร์ 7 พ.ย.</div></div></div>
-    <p class="theme">ออกเช้ามืด ไหว้พระวัดเก่าที่บางแสน ชาร์จรถ ขับชมวิวอ่างบางพระ นั่งคาเฟ่ริมลำธาร แล้วไปสวนสัตว์ กินข้าว เช็กอินบ่ายสองโมง</p>
-    <a class="routebtn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Siri%20Park%20and%20Zoo%20by%20Sriracha%20Zoo&amp;waypoints=Wat%20Tan%20Lom%20Chon%20Buri%7C13.2723014,100.9354052%7C13.2215255,100.9669814%7CThe%20Hidden%20Falls%20Si%20Racha&amp;travelmode=driving">🧭 เปิดเส้นทางวันนี้ใน Google Maps</a>
+    <p class="theme">ไหว้พระวัดเก่าที่บางแสน ชาร์จรถ ขับชมวิวอ่างบางพระ แล้วไปสวนสัตว์ กินข้าว เช็กอินบ่ายโมงครึ่ง · คาเฟ่ริมลำธารแวะได้ถ้าอยาก</p>
+    <a class="routebtn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Siri%20Park%20and%20Zoo%20by%20Sriracha%20Zoo&amp;waypoints=Wat%20Tan%20Lom%20Chon%20Buri%7C13.2723014,100.9354052%7C13.2215255,100.9669814&amp;travelmode=driving">🧭 เปิดเส้นทางวันนี้ใน Google Maps</a>
 
     <ol class="tl">
       <li class="stop">
-        <div class="time">6:00</div>
+        <div class="time">7:00</div>
         <div><p class="place">ออกจากบ้าน</p></div>
       </li>
 
       <li class="stop">
-        <div class="time">7:20</div>
+        <div class="time">8:20</div>
         <div>
           <p class="leg">🚗 ~1 ชม. 20 นาที · ~100 กม.</p>
           <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=8779988135234880470">วัดตาลล้อม</a></p>
@@ -246,16 +252,16 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
       </li>
 
       <li class="stop charge">
-        <div class="time">7:50</div>
+        <div class="time">8:50</div>
         <div>
           <p class="leg">🚗 ~3 นาที · ~1 กม.</p>
           <p class="place"><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/M1jMkfxXiebq4G5P7">⚡ ชาร์จรถ 30 นาที · PEA VOLTA</a></p>
-          <p class="note">7:50–8:20 · เช็กหัวว่างในแอป PEA VOLTA ก่อนออกจากวัด</p>
+          <p class="note">8:50–9:20 · เช็กหัวว่างในแอป PEA VOLTA ก่อนออกจากวัด</p>
         </div>
       </li>
 
       <li class="stop pass">
-        <div class="time none">ผ่าน</div>
+        <div class="time none">~9:20</div>
         <div>
           <p class="leg">🚗 ~15 นาที · ~10 กม.</p>
           <p class="place"><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/gddDHsPx5ux9bbw48">ขับชมวิว อ่างเก็บน้ำบางพระ</a></p>
@@ -263,13 +269,14 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
         </div>
       </li>
 
-      <li class="stop">
-        <div class="time">8:45</div>
+      <li class="stop optional">
+        <div class="time none">~9:50</div>
         <div>
-          <p class="leg">🚗 ~15 นาที · ~10 กม. จากจุดชมวิว</p>
-          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=1629792015118418347">The Hidden Falls ในสวนลับ</a></p>
-          <p class="note">คาเฟ่ริมลำธาร มีโต๊ะในน้ำ เปิด 8:30–18:00 · ไปถึงช่วงเพิ่งเปิด ได้โต๊ะในน้ำง่าย · สั่งและจ่ายก่อนแล้วค่อยหาโต๊ะ · อยู่ได้ราว 55 นาที ออก 9:40</p>
+          <p class="leg">🚗 ~15 นาที · ~10 กม. จากจุดชมวิว (เลี่ยงออกนอกเส้นทาง)</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=1629792015118418347">The Hidden Falls ในสวนลับ</a><span class="badge">ไม่บังคับ</span></p>
+          <p class="note">คาเฟ่ริมลำธาร มีโต๊ะในน้ำ เปิด 8:30–18:00 · สั่งและจ่ายก่อนแล้วค่อยหาโต๊ะ · ช่วงสายวันเสาร์คนเยอะ</p>
           <span class="cost">฿800</span>
+          <p class="timecalc">⏱ ถ้าแวะ: ถึงคาเฟ่ ~9:50 · นั่ง <b>30 นาที</b> ออก 10:20 · ถึงสวนสัตว์ ~10:40 · เหลือเวลาเที่ยวสวนสัตว์ <b>~1 ชม. 40 นาที</b> (ถ้าไม่แวะได้ ~2 ชม. 20 นาที) ก่อนออกไปกินข้าว 12:30<br>ถ้าจะไปถึงสวนสัตว์ 10:00 ตรงเวลา จะไม่มีเวลานั่งคาเฟ่เลย</p>
           <figure>
             <img loading="lazy" alt="The Hidden Falls ในสวนลับ" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdHRvMoZMjwxOaKRGBrKQvlDA-bG8jfZZ-ISJzvObFvfNhxVsH_q2zig7pohhYgf_6OIqvjkbaQckbMRJjafPsSmZvoEEsWofPs-0CLmnBFF1-aOaO4lA3j1LAYsMGphOZm403X=s4800-w800-h600">
             <figcaption>ภาพ: ในสวนลับ via Google Maps</figcaption>
@@ -280,7 +287,7 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
       <li class="stop">
         <div class="time">10:00</div>
         <div>
-          <p class="leg">🚗 ~20 นาที · ~15 กม. จากคาเฟ่</p>
+          <p class="leg">🚗 ~20 นาที · ~13 กม. จากจุดชมวิว (ถ้าแวะคาเฟ่ ถึงราว 10:40)</p>
           <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=5813161277437850856">ศิริพาร์ค แอนด์ ซู บาย ศรีราชา ซู</a></p>
           <p class="note">เปิด 9:00–17:00 (เข้าได้ถึง 16:00) · ผู้ใหญ่ ฿100 ได้คูปอง ฿100 คืนไว้ใช้ซื้ออาหารสัตว์ ถ่ายรูป หรือซื้อของกิน · เด็กสูงไม่ถึง 140 ซม. เข้าฟรี · ที่ร่มน้อย เตรียมหมวกและน้ำ</p>
           <span class="cost">฿500 (ผู้ใหญ่ 5)</span>
@@ -341,7 +348,7 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
       </li>
 
       <li class="stop stay">
-        <div class="time">14:00</div>
+        <div class="time">13:30</div>
         <div>
           <p class="leg">🚗 ~10–15 นาที · ~5–10 กม. จากร้านอาหาร</p>
           <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=13549312549956065138">เช็กอิน Balcony Courtyard ศรีราชา</a></p>
@@ -502,12 +509,12 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
       <tr><td>ค่าเพิ่มวันเสาร์ (2 ห้อง × 500)</td><td>1,000</td></tr>
       <tr><td>เสริมผู้ใหญ่ 1 คน</td><td>900</td></tr>
       <tr><td>เสริมเด็ก 1 คน (8–14 ปี)</td><td>450</td></tr>
-            <tr><td>The Hidden Falls ในสวนลับ</td><td>800</td></tr>
-      <tr><td>ศิริพาร์ค แอนด์ ซู (ผู้ใหญ่ 5 × 100)</td><td>500</td></tr>
+                  <tr><td>ศิริพาร์ค แอนด์ ซู (ผู้ใหญ่ 5 × 100)</td><td>500</td></tr>
       <tr><td>มื้อเย็น ร้านอาหารกองข้าว</td><td>2,500</td></tr>
       <tr class="minus"><td>Restaurant Voucher</td><td>−500</td></tr>
       <tr><td>มื้อเที่ยง ครัวบ้านป้าบุญ 3</td><td>2,000</td></tr>
-      <tr class="total"><td>รวม (บาท)</td><td>16,150</td></tr>
+      <tr class="total"><td>รวม (บาท)</td><td>15,350</td></tr>
+      <tr class="optional"><td>ถ้าแวะคาเฟ่ The Hidden Falls (ไม่บังคับ)</td><td>+800</td></tr>
     </table>
     <p class="aside">ยังไม่รวมมื้อเที่ยงวันแรก ค่าน้ำมัน/ทางด่วน และค่ากิจกรรมในสวนสัตว์ที่เกินคูปอง · ระยะทางวันแรกเป็นค่าประมาณ ให้ยึดตาม Google Maps</p>
   </section>
