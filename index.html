@@ -63,7 +63,7 @@ img{max-width:100%;display:block}
 /* signature: route track */
 .track{overflow-x:auto;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none}
 .track::-webkit-scrollbar{display:none}
-.track ol{list-style:none;margin:0;padding:0;display:flex;min-width:820px;position:relative}
+.track ol{list-style:none;margin:0;padding:0;display:flex;min-width:1080px;position:relative}
 .track ol::before{content:"";position:absolute;left:8px;right:8px;top:7px;height:2px;background:#4E7A6E}
 .track li{flex:1;position:relative;padding-top:24px;font-size:.82rem;line-height:1.35;color:#D6E5DD}
 .track li::before{content:"";position:absolute;top:0;left:0;width:16px;height:16px;border-radius:50%;
@@ -153,22 +153,12 @@ dialog.lb.multi .lb-nav{display:block}
 /* optional stop */
 .badge{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.02em;vertical-align:middle;
   color:var(--saffron-ink);border:1px dashed var(--saffron);border-radius:999px;padding:1px 9px;margin-left:6px}
-.stop.optional::after{border-style:dashed;background:transparent}
-.stop.optional>div:last-child{opacity:.92}
-.track li.optional::before{border-style:dashed;background:transparent}
 .skip{margin:8px 0 0;font-size:.88rem;color:var(--muted);background:var(--surface);border-left:3px solid var(--jade);padding:6px 10px;border-radius:0 6px 6px 0}
-.ledger tr.optional td{color:var(--muted);font-style:italic}
 .hero .money small{display:block;font-size:.78rem;color:#A9C4B8}
 
-/* cafe toggle */
-.plan{display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin:0 0 24px;width:fit-content;max-width:100%}
-.plan button{border:none;background:none;font:inherit;font-size:.9rem;font-weight:500;color:var(--muted);padding:7px 14px;border-radius:999px;cursor:pointer}
-.plan button[aria-pressed="true"]{background:var(--saffron);color:#1C1608}
-.cafe-only{display:none}
-body.cafe-on .cafe-only{display:block}
-body.cafe-on li.cafe-only{display:grid}
-body.cafe-on .track li.cafe-only{display:block}
-.track li.cafe-only{list-style:none}
+.stop.pass::after{width:8px;height:8px;left:55px;top:11px;background:var(--line);border-color:var(--muted)}
+.stop.pass .place{font-size:1rem;font-weight:500}
+.stop.charge::after{background:var(--jade)}
 
 /* stay card */
 .stay-card{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--saffron);
@@ -207,14 +197,17 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
     <h1>ศรีราชา<br>สองวันหนึ่งคืน</h1>
     <p class="when">เสาร์ 7 – อาทิตย์ 8 พฤศจิกายน 2569</p>
     <div class="money">
-      <div><strong data-a="฿15,350" data-b="฿16,150">฿15,350</strong>งบรวมทั้งทริป<small data-a="+฿800 ถ้าแวะคาเฟ่ในสวนลับ" data-b="รวมคาเฟ่ในสวนลับแล้ว">+฿800 ถ้าแวะคาเฟ่ในสวนลับ</small></div>
-      <div><strong>~260 กม.</strong>ขับรวมไป-กลับ</div>
+      <div><strong>฿16,150</strong>งบรวมทั้งทริป</div>
+      <div><strong>~270 กม.</strong>ขับรวมไป-กลับ</div>
     </div>
     <nav class="track" aria-label="เส้นทางทั้งทริป">
       <ol>
-        <li>บ้าน<span data-a="7:00" data-b="6:50">7:00</span></li>
-        <li class="optional cafe-only">The Hidden Falls<span>~115 กม.</span></li>
-        <li>Siri Park &amp; Zoo<span data-a="~110 กม." data-b="~15 กม.">~110 กม.</span></li>
+        <li>บ้าน<span>6:00</span></li>
+        <li>วัดตาลล้อม<span>~100 กม.</span></li>
+        <li>ชาร์จ PEA VOLTA<span>~1 กม. · 30 นาที</span></li>
+        <li>ชมวิวอ่างบางพระ<span>ผ่านทาง</span></li>
+        <li>The Hidden Falls<span>~20 กม.</span></li>
+        <li>Siri Park &amp; Zoo<span>~15 กม.</span></li>
         <li>มื้อเที่ยง<span>เลือก 1 ใน 4 ร้าน</span></li>
         <li class="stay">Balcony Courtyard<span>~5–10 กม. · ค้าง 1 คืน</span></li>
         <li>ครัวบ้านป้าบุญ 3<span>6 กม.</span></li>
@@ -229,27 +222,53 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
 
   <!-- DAY 1 -->
   <section class="day" id="day1">
-    <div class="dayhead"><span class="num">1</span><div><h2>ลำธาร สวนสัตว์ แล้วเข้าที่พัก</h2><div class="date">วันเสาร์ 7 พ.ย.</div></div></div>
-    <p class="theme">สวนสัตว์ช่วงเช้า กินข้าวเที่ยง แล้วเช็กอินบ่ายสองโมง · เลือกได้ว่าจะแวะคาเฟ่ริมลำธารก่อนหรือไม่</p>
-    <a class="routebtn" target="_blank" rel="noopener"
-       href="https://www.google.com/maps/dir/?api=1&destination=Balcony%20Courtyard%20Sriracha&waypoints=Siri%20Park%20and%20Zoo%20by%20Sriracha%20Zoo&travelmode=driving" id="route1" data-a="https://www.google.com/maps/dir/?api=1&amp;destination=Balcony%20Courtyard%20Sriracha&amp;waypoints=Siri%20Park%20and%20Zoo%20by%20Sriracha%20Zoo&amp;travelmode=driving" data-b="https://www.google.com/maps/dir/?api=1&amp;destination=Balcony%20Courtyard%20Sriracha&amp;waypoints=The%20Hidden%20Falls%20Si%20Racha%7CSiri%20Park%20and%20Zoo%20by%20Sriracha%20Zoo&amp;travelmode=driving">🧭 เปิดเส้นทางวันนี้ใน Google Maps</a>
-    <div class="plan" role="group" aria-label="แวะคาเฟ่ในสวนลับไหม">
-      <button type="button" data-plan="a" aria-pressed="true">ไปสวนสัตว์ตรง</button>
-      <button type="button" data-plan="b" aria-pressed="false">☕ แวะคาเฟ่ในสวนลับก่อน</button>
-    </div>
+    <div class="dayhead"><span class="num">1</span><div><h2>วัด ลำธาร สวนสัตว์ แล้วเข้าที่พัก</h2><div class="date">วันเสาร์ 7 พ.ย.</div></div></div>
+    <p class="theme">ออกเช้ามืด ไหว้พระวัดเก่าที่บางแสน ชาร์จรถ ขับชมวิวอ่างบางพระ นั่งคาเฟ่ริมลำธาร แล้วไปสวนสัตว์ กินข้าว เช็กอินบ่ายสองโมง</p>
+    <a class="routebtn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=Siri%20Park%20and%20Zoo%20by%20Sriracha%20Zoo&amp;waypoints=Wat%20Tan%20Lom%20Chon%20Buri%7C13.2723014,100.9354052%7C13.2215255,100.9669814%7CThe%20Hidden%20Falls%20Si%20Racha&amp;travelmode=driving">🧭 เปิดเส้นทางวันนี้ใน Google Maps</a>
 
     <ol class="tl">
       <li class="stop">
-        <div class="time" data-a="7:00" data-b="6:50">7:00</div>
+        <div class="time">6:00</div>
         <div><p class="place">ออกจากบ้าน</p></div>
       </li>
 
-      <li class="stop optional cafe-only">
-        <div class="time">8:30</div>
+      <li class="stop">
+        <div class="time">7:20</div>
         <div>
-          <p class="leg">🚗 ~1 ชม. 40 นาที · ~115 กม. จากบ้าน</p>
-          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=1629792015118418347">The Hidden Falls ในสวนลับ</a><span class="badge">ไม่บังคับ</span></p>
-          <p class="note">คาเฟ่ริมลำธาร มีโต๊ะในน้ำ เปิด 8:30–18:00 · ไปถึงตอนเปิดพอดี ได้โต๊ะในน้ำง่าย · สั่งและจ่ายก่อนแล้วค่อยหาโต๊ะ · อยู่ได้ราว 1 ชม. ก่อนไปสวนสัตว์</p>
+          <p class="leg">🚗 ~1 ชม. 20 นาที · ~100 กม.</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=8779988135234880470">วัดตาลล้อม</a></p>
+          <p class="note">วัดเก่าย่านแสนสุข บางแสน สร้างราว พ.ศ. 2417 จุดเด่นคืออุโบสถหลังเก่า เงียบ ร่มรื่น เปิด 24 ชม. · ใช้เวลาราว 25 นาที</p>
+          <figure>
+            <img loading="lazy" alt="วัดตาลล้อม" src="https://lh3.googleusercontent.com/grass-cs/AABkmLciX83APQepDqOQkQ-ebCYG4B1f_6bIjQ7Cci_GNjm7Seugm2VSPo3CxnLkhWkz6rqg2n43O_VOziuSSlhGmCxFrhOCowibxYxOvrHXM9fPg6mcb7oA77wpkSUODEXek8TOk4g=s4800-w800-h600">
+            <figcaption>ภาพ: Kei Nomad via Google Maps</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="stop charge">
+        <div class="time">7:50</div>
+        <div>
+          <p class="leg">🚗 ~3 นาที · ~1 กม.</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/M1jMkfxXiebq4G5P7">⚡ ชาร์จรถ 30 นาที · PEA VOLTA</a></p>
+          <p class="note">7:50–8:20 · เช็กหัวว่างในแอป PEA VOLTA ก่อนออกจากวัด</p>
+        </div>
+      </li>
+
+      <li class="stop pass">
+        <div class="time none">ผ่าน</div>
+        <div>
+          <p class="leg">🚗 ~15 นาที · ~10 กม.</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/gddDHsPx5ux9bbw48">ขับชมวิว อ่างเก็บน้ำบางพระ</a></p>
+          <p class="note">ไม่ลงจากรถ · บางรีวิวบอกว่าด้านในมีเวลาเปิด-ปิดให้คนทั่วไปเข้า ถ้าประตูปิดให้ขับถนนรอบอ่างแทน</p>
+        </div>
+      </li>
+
+      <li class="stop">
+        <div class="time">8:45</div>
+        <div>
+          <p class="leg">🚗 ~15 นาที · ~10 กม. จากจุดชมวิว</p>
+          <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=1629792015118418347">The Hidden Falls ในสวนลับ</a></p>
+          <p class="note">คาเฟ่ริมลำธาร มีโต๊ะในน้ำ เปิด 8:30–18:00 · ไปถึงช่วงเพิ่งเปิด ได้โต๊ะในน้ำง่าย · สั่งและจ่ายก่อนแล้วค่อยหาโต๊ะ · อยู่ได้ราว 55 นาที ออก 9:40</p>
           <span class="cost">฿800</span>
           <figure>
             <img loading="lazy" alt="The Hidden Falls ในสวนลับ" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdHRvMoZMjwxOaKRGBrKQvlDA-bG8jfZZ-ISJzvObFvfNhxVsH_q2zig7pohhYgf_6OIqvjkbaQckbMRJjafPsSmZvoEEsWofPs-0CLmnBFF1-aOaO4lA3j1LAYsMGphOZm403X=s4800-w800-h600">
@@ -259,9 +278,9 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
       </li>
 
       <li class="stop">
-        <div class="time" data-a="9:00" data-b="10:00">9:00</div>
+        <div class="time">10:00</div>
         <div>
-          <p class="leg" data-a="🚗 ~1 ชม. 30 นาที · ~110 กม. จากบ้าน" data-b="🚗 ~20 นาที · ~15 กม. จากคาเฟ่">🚗 ~1 ชม. 30 นาที · ~110 กม. จากบ้าน</p>
+          <p class="leg">🚗 ~20 นาที · ~15 กม. จากคาเฟ่</p>
           <p class="place"><a target="_blank" rel="noopener" href="https://maps.google.com/?cid=5813161277437850856">ศิริพาร์ค แอนด์ ซู บาย ศรีราชา ซู</a></p>
           <p class="note">เปิด 9:00–17:00 (เข้าได้ถึง 16:00) · ผู้ใหญ่ ฿100 ได้คูปอง ฿100 คืนไว้ใช้ซื้ออาหารสัตว์ ถ่ายรูป หรือซื้อของกิน · เด็กสูงไม่ถึง 140 ซม. เข้าฟรี · ที่ร่มน้อย เตรียมหมวกและน้ำ</p>
           <span class="cost">฿500 (ผู้ใหญ่ 5)</span>
@@ -273,7 +292,7 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
       </li>
 
       <li class="stop">
-        <div class="time" data-a="11:30" data-b="12:30">11:30</div>
+        <div class="time">12:30</div>
         <div>
           <p class="place">มื้อเที่ยง · เลือก 1 ร้าน</p>
           <p class="note">ทั้ง 4 ร้านอยู่ระหว่างสวนสัตว์กับโรงแรม</p>
@@ -483,12 +502,12 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
       <tr><td>ค่าเพิ่มวันเสาร์ (2 ห้อง × 500)</td><td>1,000</td></tr>
       <tr><td>เสริมผู้ใหญ่ 1 คน</td><td>900</td></tr>
       <tr><td>เสริมเด็ก 1 คน (8–14 ปี)</td><td>450</td></tr>
-            <tr><td>ศิริพาร์ค แอนด์ ซู (ผู้ใหญ่ 5 × 100)</td><td>500</td></tr>
+            <tr><td>The Hidden Falls ในสวนลับ</td><td>800</td></tr>
+      <tr><td>ศิริพาร์ค แอนด์ ซู (ผู้ใหญ่ 5 × 100)</td><td>500</td></tr>
       <tr><td>มื้อเย็น ร้านอาหารกองข้าว</td><td>2,500</td></tr>
       <tr class="minus"><td>Restaurant Voucher</td><td>−500</td></tr>
       <tr><td>มื้อเที่ยง ครัวบ้านป้าบุญ 3</td><td>2,000</td></tr>
-      <tr class="total"><td>รวม (บาท)</td><td>15,350</td></tr>
-      <tr class="optional"><td>ถ้าแวะคาเฟ่ The Hidden Falls (ไม่บังคับ)</td><td>+800</td></tr>
+      <tr class="total"><td>รวม (บาท)</td><td>16,150</td></tr>
     </table>
     <p class="aside">ยังไม่รวมมื้อเที่ยงวันแรก ค่าน้ำมัน/ทางด่วน และค่ากิจกรรมในสวนสัตว์ที่เกินคูปอง · ระยะทางวันแรกเป็นค่าประมาณ ให้ยึดตาม Google Maps</p>
   </section>
@@ -536,21 +555,6 @@ footer{padding:40px 0 56px;font-size:.85rem;color:var(--muted)}
     var dx=e.changedTouches[0].clientX-sx; sx=null;
     if(Math.abs(dx)>60){ e.preventDefault(); step(dx<0?1:-1); } });
   lb.addEventListener('cancel',function(){ big.removeAttribute('src'); });
-})();
-(function(){
-  var btns=document.querySelectorAll('.plan button');
-  function apply(p){
-    document.body.classList.toggle('cafe-on', p==='b');
-    btns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.plan===p ? 'true':'false'); });
-    document.querySelectorAll('[data-a][data-b]').forEach(function(el){
-      var v=el.getAttribute(p==='b'?'data-b':'data-a');
-      if(el.tagName==='A'){ el.href=v; } else { el.textContent=v; }
-    });
-    try{ localStorage.setItem('sriracha-plan',p); }catch(e){}
-  }
-  btns.forEach(function(b){ b.addEventListener('click',function(){ apply(b.dataset.plan); }); });
-  var saved='a'; try{ saved=localStorage.getItem('sriracha-plan')||'a'; }catch(e){}
-  apply(saved);
 })();
 </script>
 </body>
